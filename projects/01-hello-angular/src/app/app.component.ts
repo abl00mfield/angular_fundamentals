@@ -7,9 +7,25 @@ import { RouterOutlet } from '@angular/router';
   standalone: true,
   imports: [CommonModule, RouterOutlet],
   template: `
-    <h1>If you are reading this...</h1>
+    <h1>If you are reading this...{{ userName}}</h1>
     <p>Things have worked out well! 🎉</p>
+    <h2>Favorite Songs</h2>
+    <ol>
+      <li>Fireflies</li>
+      <li>Vanilla Twilight</li>
+      <li>The Saltwater room</li>
+
+    </ol>
   `,
-  styles: ``,
+  styles: `
+    h1 {
+      color: red
+    }
+    ol {
+      list-style-type: upper-roman
+    }
+    `,
 })
-export class AppComponent {}
+export class AppComponent {
+  userName = 'coding champ'
+}
