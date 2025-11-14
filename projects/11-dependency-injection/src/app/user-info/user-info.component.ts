@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { User } from '../data';
 
 @Component({
@@ -6,13 +6,14 @@ import { User } from '../data';
   standalone: true,
   template: `
     <p>{{ user.id }} {{ user.email }}</p>
+    <p>{{ user.company.catchPhrase }}</p>
     <!-- add more properties to customize -->
   `,
   styles: ``,
 })
 export class UserInfoComponent {
   // Test user data
-  user: User = {
+  @Input() user: User = {
     id: -1,
     name: 'Ervin Howell',
     username: 'Antonette',
